@@ -9,7 +9,7 @@ BEGIN
     BEGIN
         key := tab[i]; // Nous définissons l'élément courant comme la variable key.
         j := i - 1;
-    while (j >= 0) and (arr[j] > key) do 
+    while (j >= 0) and (tab[j] > key) do 
 /*Nous itérons en arrière dans le tableau à partir de l'index de l'élément courant jusqu'à ce que nous atteignions le début ou que nous trouvions un élément plus petit que key.
 Pour chaque élément supérieur à key, nous le déplaçons d'une position vers la droite.*/
     BEGIN
