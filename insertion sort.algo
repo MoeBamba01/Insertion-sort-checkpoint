@@ -1,0 +1,21 @@
+PROCEDURE Insertion_sort(var tab: ARRAY_OF Integer; size: Integer)
+// Le paramètre size est utilisé pour déterminer la taille du tableau à trier.
+// Le paramètre tab est transmis par référence, de sorte que le tableau trié est renvoyé dans la variable tableau d'origine.
+ALGORITHM Insertion_short
+VAR
+    i, j, key: Integer;
+BEGIN
+    for i := 1 to size - 1 do // Nous commençons par itérer sur le tableau en partant du deuxième élément (puisque le premier élément est déjà "trié" par lui-même).
+    BEGIN
+        key := tab[i]; // Nous définissons l'élément courant comme la variable key.
+        j := i - 1;
+    while (j >= 0) and (arr[j] > key) do 
+/*Nous itérons en arrière dans le tableau à partir de l'index de l'élément courant jusqu'à ce que nous atteignions le début ou que nous trouvions un élément plus petit que key.
+Pour chaque élément supérieur à key, nous le déplaçons d'une position vers la droite.*/
+    BEGIN
+    tab[j + 1] := tab[j]; 
+    j := j - 1;
+end;
+    tab[j + 1] := key; /*Une fois que nous avons trouvé la position correcte pour key, nous l'insérons dans le tableau. Nous répétons le processus pour les autres éléments non triés.*/
+end;
+END
